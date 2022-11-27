@@ -7,11 +7,14 @@ const connection = mysql.createConnection({
     database: dbConfig.database,
     user: dbConfig.user, 
     password: dbConfig.password,
-    multipleStatements: true
+    multipleStatements: true,
+    connectionLimit: 15,
+    queueLimit: 30,
+    acquireTimeout: 1000000,
 });
 connection.connect(function (err) {
     if(err){
-        console.log("error occurred while connecting");
+        console.log("error occurred while connecting", err);
     }
     else{
         console.log("connection created with Mysql successfully");
