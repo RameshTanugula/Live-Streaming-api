@@ -62,7 +62,7 @@ app.post('/checkout', (req, res) => {
           console.log(userData, 'userdata***')
           var mailOptions = {
             from: 'homeliveevents@gmail.com',
-            to: ['homeliveevents@gmail.com', 'gnitramesh@gmail.com'],
+            to: ['homeliveevents@gmail.com'],
             subject: `Event registered on ${data?.event_date}`,
             html: `<h4><b>Dear Admin</b></h4><p> New event booked at  ${data?.event_date} </p>
             <br />
